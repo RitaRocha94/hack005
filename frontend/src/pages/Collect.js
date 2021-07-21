@@ -12,21 +12,24 @@ function Collect() {
     }
 
     useEffect(() => {
+        fetchDonations()
     }, [])
 
     return (
         <div>
             <h2>Bem-Vindo</h2>
             <Formik
-            initialValues={
-                { freguesia: ''}}
+            initialValues={{ freguesia: ''}}
 
-                onChange={async (values) => {
+                onSubmit={async (values) => {
                     const res = await fetch(`/api/donations/:${values}`)
                     const json = await res.json();
                     setDonations(json.donations)
                   }}
-                />
+                >
+               {
+                    ({ values, handleSubmit }) => (
+            <form onSubmit={handleSubmit}>
                  <Field
               as="select"
               name="freguesias" >
@@ -39,9 +42,11 @@ function Collect() {
               <option value="São João das Lampas e Terrugem">São João das Lampas e Terrugem</option>
               <option value="Almargem do Bispo, Pero Pinheiro e Montelavar">Almargem do Bispo, Pero Pinheiro e Montelavar</option>
               <option value="Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim">Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim</option>
-            </Field>
-
-            <section>
+                </Field>
+            </form>
+                    )}
+</Formik>
+            {/* <section>
                 {
                     donations.map(donation => (
                         <div
@@ -51,7 +56,7 @@ function Collect() {
                         </div>
                     ))
                 }
-            </section>
+            </section> */}
         </div>
     )
 }
