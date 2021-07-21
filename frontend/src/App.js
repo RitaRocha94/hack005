@@ -1,13 +1,11 @@
 import './App.css';
 import Donate from './pages/Donate';
+import Collect from './pages/Collect';
 import Landing from './pages/Landing';
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 function App() {
   return (
-    //ola
-    //adeus
-    //Ola
     <div className="App">
       <BrowserRouter>
       <div>
@@ -18,8 +16,8 @@ function App() {
             <Route exact path="/donate">
                 <Donate />
             </Route>
-            <Route exact path="/donate">
-                <Donate />
+            <Route exact path="/collect">
+                <Collect />
             </Route>
       </Switch>
         </div>

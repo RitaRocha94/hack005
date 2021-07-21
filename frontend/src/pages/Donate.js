@@ -37,7 +37,7 @@ function Donate() {
                   {values.alimentos && values.alimentos.length > 0 ? (
                     values.alimentos.map((alimento, index) => (
                       <div key={index}>
-                        <Field type="text" name={`alimentos.${index}.text`} placeholder="Nome"/>
+                        <Field name={`alimentos.${index}.name`}/>
                         <Field type="number"
                           min={0}
                           name={`alimentos.${index}.number`}
