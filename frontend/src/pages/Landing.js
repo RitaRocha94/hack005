@@ -4,11 +4,9 @@ function Landing() {
     return (
         <div>
             <h2>TheFoodFund</h2>
-            <h2>TheFoodFund</h2>
-            <h2>TheFoodFund</h2>
-        <Link to="/donate">Doares</Link>
+        <Link to="/donate">Doar</Link>
         <br/>
-        <button>Recolheres</button>
+        <button>Recolher</button>
         </div>
     )
 }

@@ -1,7 +1,7 @@
-const { ObjectId } = require("mongodb")
-
+const { MongoClient, ObjectId } = require("mongodb")
 const URI = "mongodb://localhost:27017"
 const DB_NAME = "Hack05"
+let client;
 
 async function connect(uri){
     try{
@@ -23,12 +23,31 @@ async function getCollection(dbName, collectionName){
     return collection;
 }
 
-async function insertDonation(food, location, route){
+async function insertDonation(values){
+
+let alimentos = getDonationsObject(values.alimentos)
+const donation = {
+    alimentos: alimentos,
+    freguesias: values.freguesias,
+    rua: values.rua
+}
  const collection  = await getCollection(DB_NAME, "Donations")
- const result = collection.insertOne(food, location, route)
+ const result = await collection.insertOne(donation)
  console.log(result.insertedId)
 
  return result
+}
+
+function getDonationsObject(alimentos){
+    let array = []
+    for(let i = 0; i < alimentos.length; i++){
+        let object = {
+            text: alimentos[i].text,
+            number: alimentos[i].number
+        }
+        array.push(object)
+    }
+    return array
 }
 
 async function deleteDonation(id){

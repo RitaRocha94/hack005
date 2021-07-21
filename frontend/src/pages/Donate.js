@@ -1,26 +1,27 @@
-
+import React from 'react';
 import { Formik, Field, FieldArray } from 'formik'
 
 function Donate() {
+  const [value, setValue] = React.useState('');
   return (
     <>
       <h1>Doações</h1>
       <Formik
         initialValues={
-          { alimentos: '', 
-            quantidade: '',
-            frequeguesia: '',
+          { alimentos: [], 
+            freguesias: '',
             rua: ''}}
         
         onSubmit={async (values, { resetForm }) => {
           console.log(values)
-          const res = await fetch(`/api/donations`, {
+          const res = await fetch(`/api/donations/`, {
             method: "POST",
             body: JSON.stringify(values),
             headers: { "Content-Type": "application/json" }
           })
           console.log(res.status)
           if (res.status === 201) {
+            const {id} = await res.json()
             resetForm()
           }
         }}
@@ -49,14 +50,14 @@ function Donate() {
                         </button>
                         <button
                           type="buttonMais"
-                          onClick={() => arrayHelpers.insert(index + 1, '')} 
+                          onClick={() => arrayHelpers.insert(index + 1, {text: "", number: ""})} 
                         >
                           +
                         </button>
                       </div>
                     ))
                   ) : (
-                    <button type="button" onClick={() => arrayHelpers.push('')}>
+                    <button type="button" onClick={() => arrayHelpers.push({text: "", number: ""})}>
                      Adicionar Alimentos
                     </button>
                   )}
@@ -64,7 +65,7 @@ function Donate() {
               )}
             />
             
-            <h2>Escolhe a freguesias e tal</h2>
+            <h2>Escolhe a freguesias</h2>
             <Field
               as="select"
               name="freguesias" >

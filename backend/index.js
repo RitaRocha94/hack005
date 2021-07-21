@@ -6,7 +6,7 @@ const {
     deleteDonation
 } = require("./db")
 const app = express()
-const PORT = 3001
+const PORT = 3501
 
 app.use(express.json())
 
@@ -34,10 +34,10 @@ app.get("/api/donations/", async (req, res) => {
 })
 
 
-app.post("/api/donations", async (req, res) => {
+app.post("/api/donations/", async (req, res) => {
     try {
-        const {food, location, route} = req.body
-        const id = await insertDonation({ food, location, route})
+        const values = req.body
+        const id = await insertDonation( values )
         res.status(201).json({id: id})
 
     } catch(err) {
