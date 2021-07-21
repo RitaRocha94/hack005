@@ -19,9 +19,10 @@ function Collect() {
         <div>
             <h2>Bem-Vindo</h2>
             <Formik
-            initialValues={{ freguesia: ''}}
+            initialValues={{ freguesias: ''}}
 
                 onSubmit={async (values) => {
+                    console.log(values)
                     const res = await fetch(`/api/donations/:${values}`)
                     const json = await res.json();
                     setDonations(json.donations)
@@ -43,8 +44,10 @@ function Collect() {
               <option value="Almargem do Bispo, Pero Pinheiro e Montelavar">Almargem do Bispo, Pero Pinheiro e Montelavar</option>
               <option value="Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim">Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim</option>
                 </Field>
+                <button type="submit">Pesquisar</button>
             </form>
                     )}
+
 </Formik>
             {/* <section>
                 {

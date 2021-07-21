@@ -42,7 +42,7 @@ function getDonationsObject(alimentos){
     let array = []
     for(let i = 0; i < alimentos.length; i++){
         let object = {
-            text: alimentos[i].text,
+            name: alimentos[i].name,
             number: alimentos[i].number
         }
         array.push(object)
@@ -59,7 +59,7 @@ async function deleteDonation(id){
 
 async function findDonation(location){
    const collection = await getCollection(DB_NAME, "Donations")
-   const result = collection.find({location: location}).toArray()
+   const result = collection.find({location: location.freguesias}).toArray()
    console.log(result)
    return result 
 }

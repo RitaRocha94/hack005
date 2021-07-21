@@ -50,14 +50,14 @@ function Donate() {
                         </button>
                         <button
                           type="buttonMais"
-                          onClick={() => arrayHelpers.insert(index + 1, {text: "", number: ""})} 
+                          onClick={() => arrayHelpers.insert(index + 1, {name: "", number: ""})} 
                         >
                           +
                         </button>
                       </div>
                     ))
                   ) : (
-                    <button type="button" onClick={() => arrayHelpers.push({text: "", number: ""})}>
+                    <button type="button" onClick={() => arrayHelpers.push({name: "", number: ""})}>
                      Adicionar Alimentos
                     </button>
                   )}

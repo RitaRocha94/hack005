@@ -6,7 +6,7 @@ function Landing() {
             <h2>TheFoodFund</h2>
         <Link to="/donate">Doar</Link>
         <br/>
-        <button>Recolher</button>
+        <Link to="/collect">Recolher</Link>
         </div>
     )
 }
