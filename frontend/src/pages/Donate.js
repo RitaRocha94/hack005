@@ -29,42 +29,6 @@ function Donate() {
         {
           ({ values, handleSubmit }) => (
             <form onSubmit={handleSubmit}>
-              <h2>Adiciona os alimentos e as respetivas quantidades que queres doar</h2>
-            <FieldArray
-              name="alimentos"
-              render={arrayHelpers => (
-                <div>
-                  {values.alimentos && values.alimentos.length > 0 ? (
-                    values.alimentos.map((alimento, index) => (
-                      <div key={index}>
-                        <Field name={`alimentos.${index}.name`}/>
-                        <Field type="number"
-                          min={0}
-                          name={`alimentos.${index}.number`}
-                          placeholder="Quantidade (unidade)" />
-                        <button
-                          type="button"
-                          onClick={() => arrayHelpers.remove(index)} 
-                        >
-                          -
-                        </button>
-                        <button
-                          type="buttonMais"
-                          onClick={() => arrayHelpers.insert(index + 1, {name: "", number: ""})} 
-                        >
-                          +
-                        </button>
-                      </div>
-                    ))
-                  ) : (
-                    <button type="button" onClick={() => arrayHelpers.push({name: "", number: ""})}>
-                     Adicionar Alimentos
-                    </button>
-                  )}
-                </div>
-              )}
-            />
-            
             <h2>Escolhe a freguesias</h2>
             <Field
               as="select"
@@ -79,11 +43,8 @@ function Donate() {
               <option value="Almargem do Bispo, Pero Pinheiro e Montelavar">Almargem do Bispo, Pero Pinheiro e Montelavar</option>
               <option value="Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim">Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim</option>
             </Field>
-            <h2>Escolhe a rua</h2>
-            <Field type="text" name="rua" placeholder="Rua"/>
-            <br/>
 
-            <button type="submit">Doar!</button>
+            <button type="submit">Pesquisar</button>
             </form>
           )
         }

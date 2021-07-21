@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+.container {
+    margin-top: 10vh;
+    margin-left: 5vw;
+    width: 500px;
+    height: 120px;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    margin-left: 60vw;
+    margin-top: 5vh;
+}
+.ButtonDonate {
+    text-decoration: none;
+    background-color: rgb(209, 174, 109);
+    color: white;
+    border-radius: 5px;
+    font-size: 30px;
+    width: 20rem;
+    height: 4rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.ButtonCollect {
+    text-decoration: none;
+    background-color: rgb(207, 155, 57);
+    color: white;
+    font-size: 30px;
+    border-radius: 5px;
+    font-size: 30px;
+    width: 20rem;
+    height: 4rem;
+    margin-top: 10px;
+    text-align: center;
+}
