@@ -58,7 +58,7 @@ class Donate extends React.Component{
            <div>
     {this.state.deliveryPlaces.map((item, index) => (
         <div key={index}>
-            <div className='deliveryPlaces'>{item}</div>
+            <li className='deliveryPlaces'>{item}</li>
         </div>
     ))}
     </div> : null}
