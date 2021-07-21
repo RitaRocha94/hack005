@@ -53,7 +53,9 @@ function Collect() {
             </Formik>
             <div>
     {donations.map((item, index) => (
-        <p key={index}> {item.rua}!</p>
+        <div key={index}>
+            <div>{item.rua}</div>
+        </div>
     ))}
     </div>
         </div>
