@@ -12,6 +12,8 @@ app.use(express.json())
 
 
 app.get("/api/donations/:location", async (req, res) => {
+    console.log("req.params.location:")
+    console.log(req.params.location)
     try {
         res.status(200).json({
         donations: await findDonation(req.params.location)
@@ -22,16 +24,16 @@ app.get("/api/donations/:location", async (req, res) => {
     }
 })
 
-app.get("/api/donations/", async (req, res) => {
-    try {
-        res.status(200).json({
-        Donations: await findDonation(location)
-    })
-    } catch (err) {
-    res.status(500).send("Erro a ler as mensagens")
-    console.log(err)
-    }
-})
+// app.get("/api/donations/", async (req, res) => {
+//     try {
+//         res.status(200).json({
+//         donations: await findDonation(location)
+//     })
+//     } catch (err) {
+//     res.status(500).send("Erro a ler as mensagens")
+//     console.log(err)
+//     }
+// })
 
 
 app.post("/api/donations/", async (req, res) => {

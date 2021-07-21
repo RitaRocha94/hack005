@@ -5,15 +5,16 @@ import { useEffect, useState } from "react";
 function Collect() {
     const [donations, setDonations] = useState([])
 
-    async function fetchDonations(){
-        const res = await fetch('/')
-        const resBody = await res.json();
-        setDonations(resBody.donations)
-    }
+    // async function fetchDonations(values){
+    //     const res = await fetch(`/api/donations/${values.freguesias}`)
+    //     const json = await res.json();
+    //     setDonations(json.donations)
+    //     console.log(donations)
+    // }
 
-    useEffect(() => {
-        fetchDonations()
-    }, [])
+    // useEffect(() => {
+    //     fetchDonations("Cabrelas")
+    // }, [])
 
     return (
         <div>
@@ -23,9 +24,10 @@ function Collect() {
 
                 onSubmit={async (values) => {
                     console.log(values.freguesias)
-                    const res = await fetch(`/api/donations/:${values.freguesias}`)
+                    const res = await fetch(`/api/donations/${values.freguesias}`)
                     const json = await res.json();
                     setDonations(json.donations)
+                    console.log(donations)
                   }}
                 >
                {
@@ -49,17 +51,11 @@ function Collect() {
                     )}
 
             </Formik>
-            {/* <section>
-                {
-                    donations.map(donation => (
-                        <div
-                            key={donation._id}
-                        >
-                            {donation}
-                        </div>
-                    ))
-                }
-            </section> */}
+            <div>
+    {donations.map((item, index) => (
+        <p key={index}> {item.rua}!</p>
+    ))}
+    </div>
         </div>
     )
 }
