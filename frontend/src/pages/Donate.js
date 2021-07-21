@@ -36,7 +36,8 @@ class Donate extends React.Component{
                {
                     ({ values, handleSubmit }) => (
             <form onSubmit={handleSubmit}>
-                 <Field
+            <h2>Escolhe a freguesias</h2>
+            <Field
               as="select"
               name="freguesias" >
               <option value="Agualva e Mira-Sintra">Agualva e Mira-Sintra</option>
