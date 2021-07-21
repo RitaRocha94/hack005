@@ -22,8 +22,8 @@ function Collect() {
             initialValues={{ freguesias: ''}}
 
                 onSubmit={async (values) => {
-                    console.log(values)
-                    const res = await fetch(`/api/donations/:${values}`)
+                    console.log(values.freguesias)
+                    const res = await fetch(`/api/donations/:${values.freguesias}`)
                     const json = await res.json();
                     setDonations(json.donations)
                   }}
@@ -48,7 +48,7 @@ function Collect() {
             </form>
                     )}
 
-</Formik>
+            </Formik>
             {/* <section>
                 {
                     donations.map(donation => (

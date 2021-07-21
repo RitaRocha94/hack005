@@ -14,7 +14,7 @@ app.use(express.json())
 app.get("/api/donations/:location", async (req, res) => {
     try {
         res.status(200).json({
-        Donations: await findDonation(location)
+        donations: await findDonation(req.params.location)
     })
     } catch (err) {
     res.status(500).send("Erro a ler as mensagens")

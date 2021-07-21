@@ -59,7 +59,7 @@ async function deleteDonation(id){
 
 async function findDonation(location){
    const collection = await getCollection(DB_NAME, "Donations")
-   const result = collection.find({location: location.freguesias}).toArray()
+   const result = collection.find({freguesias: location}).toArray()
    console.log(result)
    return result 
 }
