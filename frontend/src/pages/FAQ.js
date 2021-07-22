@@ -1,11 +1,13 @@
 import React from "react"
 import Accordion from 'react-bootstrap/Accordion'
 import 'bootstrap/dist/css/bootstrap.css';
+import styles from '../styles/FAQ.module.css'
+
 
 function FAQ(){
     return(
         <div>
-            <h2>Perguntas Frequentes</h2>
+            <h2 className={styles.Title}>Perguntas Frequentes</h2>
            <Accordion defaultActiveKey="0" flush>
   <Accordion.Item eventKey="0">
     <Accordion.Header>O que é o The FoodFund?</Accordion.Header>

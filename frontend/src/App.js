@@ -3,13 +3,13 @@ import Donate from './pages/Donate';
 import Collect from './pages/Collect';
 import Landing from './pages/Landing';
 import PontodeRecolha from './pages/PontodeRecolha';
-import QuemSomos from './pages/QuemSomos';
+import WhoWeAre from './pages/WhoWeAre';
 import FAQ from './pages/FAQ';
-import Voluntario from './pages/Voluntario.js';
+import Voluntary from './pages/Voluntary.js';
 import NavBar from './components/NavBar';
-import Gestão from './pages/Gestão';
+import Management from './pages/Management';
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-import Utilizador from './pages/Utilizador';
+import User from './pages/User';
 
 function App() {
   return (
@@ -28,19 +28,19 @@ function App() {
                 <Collect />
             </Route>
             <Route exact path="/Quem-Somos">
-                <QuemSomos />
+                <WhoWeAre />
             </Route>
             <Route exact path="/FAQ">
                 <FAQ />
             </Route>
             <Route exact path="/Voluntario">
-                <Voluntario />
+                <Voluntary />
             </Route>
             <Route exact path="/Utilizador">
-                <Utilizador />
+                <User />
             </Route>
             <Route exact path="/Gestão">
-                <Gestão />
+                <Management />
             </Route>
             <Route exact path="/PontodeRecolha">
                 <PontodeRecolha />

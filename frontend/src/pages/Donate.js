@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Field, FieldArray } from 'formik'
+import { Formik, Field } from 'formik'
 import styles from '../styles/Donate.module.css'
 
 class Donate extends React.Component{
@@ -20,7 +20,7 @@ class Donate extends React.Component{
     return(
 
     <div>
-            <h2>Bem-Vindo</h2>
+            <h2 className={styles.Title}>Procure os sitios onde pode doar</h2>
             <Formik
             initialValues={{ freguesias: ''}}
                 onSubmit={this.handleToggle}
@@ -28,7 +28,8 @@ class Donate extends React.Component{
                {
                     ({ values, handleSubmit }) => (
             <form onSubmit={handleSubmit}>
-            <h2>Escolhe a freguesias</h2>
+            <h3>Escolha a freguesia</h3>
+            <div className={styles.ComponentFreguesias}>
             <Field
               as="select"
               name="freguesias" >
@@ -42,7 +43,8 @@ class Donate extends React.Component{
               <option value="Almargem do Bispo, Pero Pinheiro e Montelavar">Almargem do Bispo, Pero Pinheiro e Montelavar</option>
               <option value="Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim">Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim</option>
                 </Field>
-                <button type="submit">Pesquisar</button>
+                <button className={styles.Search} type="submit"><img src={'./img/search.png'} alt={'Search'} /></button>
+            </div>
             </form>
                     )}
             </Formik>
@@ -50,12 +52,15 @@ class Donate extends React.Component{
            <div className={styles.deliveryPlaces}>
                   {this.state.deliveryPlaces.map((item, index) => (
                       <div key={index}>
-                          <li className={styles.deliveryPlacesItem}>
-                             {item}</li>
-                      </div>
+                          <p className={styles.deliveryPlacesItem}>
+                              {item}</p>  
+                        </div>
+                       
                   ))}
-    </div> : null}
-        </div> 
+            </div> : null} 
+           
+            
+      </div>
     )
     }
 }

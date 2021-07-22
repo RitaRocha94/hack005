@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+.Title{
+    font-family: 'Bree Serif', serif;
+    margin: 20px;
+    font-size: 50px;
+}
+.Voluntario{
+    display: flex;
+    flex-direction: row;
+
+
+    justify-content: center;
+    margin-left: 50px;
+}
+.Input{
+    margin-left: 20px;
+}
+.ButtonSubmit{
+    margin-left: 10px;
+}
