@@ -79,7 +79,16 @@ return (
               <option value="Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim">Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim</option>
             </Field>
             <h2>Escolhe o teu Ponto de Recolha</h2>
-            <Field type="text" name="rua" placeholder="Ponto de Recolha"/>
+            <Field
+              as="select"
+              name="rua" >
+              <option value="empty"></option>
+              <option value="Escola">Escola</option>
+              <option value="PSP">PSP</option>
+              <option value="Junta da Freguesia">Junta da Freguesia</option>
+              <option value="Clube Desportivo">Clube Desportivo</option>
+            </Field>
+            {/* <Field type="text" name="rua" placeholder="Ponto de Recolha"/> */}
             <br/>
 
             <button type="submit">Inserir Doação</button>
