@@ -1,6 +1,6 @@
 import { Formik, Field } from "formik";
 import React from "react"
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
 
 class Collect extends React.Component{
         constructor(props){
@@ -32,14 +32,14 @@ class Collect extends React.Component{
                 <h2>Bem-Vindo</h2>
                 <Formik
                 initialValues={{ freguesias: ''}}
-                    onSubmit={this.handleToggle}
-                    // onSubmit={async (values) => {
-                    //     console.log(values.freguesias)
-                    //     const res = await fetch(`/api/donations/${values.freguesias}`)
-                    //     const json = await res.json();
-                    //     this.setState({donations: json.donations})
-                    //     console.log(this.state.donations)
-                    //   }}
+                    onSubmit={ this.handleToggle}
+                    onClick={async (values) => {
+                        console.log(values.freguesias)
+                        const res = await fetch(`/api/donations/${values.freguesias}`)
+                        const json = await res.json();
+                        this.setState({donations: json.donations})
+                        console.log(this.state.donations)
+                      }}
                     >
                    {
                         ({ values, handleSubmit }) => (
@@ -67,7 +67,8 @@ class Collect extends React.Component{
                 <div>
                      {this.state.deliveryPlaces.map((item, index) => (
                      <div key={index}>
-                     <li className='deliveryPlaces'>{item}</li>
+                     <li className='deliveryPlaces'>
+                     <Link to={`/PontodeRecolha/${item}`}>{item}</Link></li>
                 </div>
     ))}
                 </div> : null}

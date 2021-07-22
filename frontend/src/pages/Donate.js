@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Formik, Field, FieldArray } from 'formik'
+import styles from '../styles/Donate.module.css'
 
 class Donate extends React.Component{
   constructor(props){
@@ -23,16 +24,7 @@ class Donate extends React.Component{
             <Formik
             initialValues={{ freguesias: ''}}
                 onSubmit={this.handleToggle}
-                // onSubmit={async (values) => {
-                //     console.log(values.freguesias)
-                //     const res = await fetch(`/api/donations/${values.freguesias}`)
-                //     const json = await res.json();
-                //     setDonations(json.donations)
-                //     console.log(donations)
-                //   }}
                 >
-
-              
                {
                     ({ values, handleSubmit }) => (
             <form onSubmit={handleSubmit}>
@@ -55,12 +47,13 @@ class Donate extends React.Component{
                     )}
             </Formik>
              {togglePlaces?
-           <div>
-    {this.state.deliveryPlaces.map((item, index) => (
-        <div key={index}>
-            <li className='deliveryPlaces'>{item}</li>
-        </div>
-    ))}
+           <div className={styles.deliveryPlaces}>
+                  {this.state.deliveryPlaces.map((item, index) => (
+                      <div key={index}>
+                          <li className={styles.deliveryPlacesItem}>
+                             {item}</li>
+                      </div>
+                  ))}
     </div> : null}
         </div> 
     )

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 function Utilizador() {
     return (
         <div className={styles.Utilizador}>
+           <Link to="/Gestão">Inserir Doações</Link>
            <Link to="/Gestão">Gerir Doações</Link>
         </div>
     )

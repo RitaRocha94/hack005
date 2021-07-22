@@ -15,3 +15,16 @@
     font-family: 'Bree Serif', serif;
     margin-top: 10px;
 }
+.Area{
+    margin-left: 20vw;
+    background-color: black;
+    border-radius: 5px;
+    padding: 4px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    
+}
+.Area a{
+    color: white;
+    
+}

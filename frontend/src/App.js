@@ -2,6 +2,7 @@ import './App.css';
 import Donate from './pages/Donate';
 import Collect from './pages/Collect';
 import Landing from './pages/Landing';
+import PontodeRecolha from './pages/PontodeRecolha';
 import QuemSomos from './pages/QuemSomos';
 import FAQ from './pages/FAQ';
 import Voluntario from './pages/Voluntario.js';
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <Route exact path="/Gestão">
                 <Gestão />
+            </Route>
+            <Route exact path="/PontodeRecolha">
+                <PontodeRecolha />
             </Route>
       </Switch>
         </div>

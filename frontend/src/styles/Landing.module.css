@@ -22,12 +22,24 @@
     background-color: rgb(209, 174, 109);
     color: white;
     border-radius: 5px;
-    font-size: 30px;
+    font-size: 40px;
     width: 20rem;
-    height: 4rem;
+    padding: 10px;
     margin-bottom: 10px;
-    text-align: center;
+
+    cursor: pointer;
+    box-shadow: 0 0 1px 0 #000;
+
+    transition: box-shadow 200ms linear;
 }
+/* .ButtonDonate a{
+    margin-top: 2px;
+    margin-left: 15px;
+}
+.ButtonCollect a{
+    margin-top: 2px;
+    margin-left: 55px;
+} */
 
 .ButtonCollect {
     text-decoration: none;
@@ -35,9 +47,25 @@
     color: white;
     font-size: 30px;
     border-radius: 5px;
-    font-size: 30px;
+    font-size: 40px;
     width: 20rem;
-    height: 4rem;
     margin-top: 10px;
+    padding: 5px;
     text-align: center;
+
+    cursor: pointer;
+    box-shadow: 0 0 1px 0 #000;
+
+    transition: box-shadow 200ms linear;
+    
+}
+.ButtonDonate:hover {
+    box-shadow: 0 0 6px black;
+    transform: scale(1.05);
+    color: white;
+}
+.ButtonCollect:hover{
+    box-shadow: 0 0 6px black;
+    transform: scale(1.05);
+    color: white;
 }

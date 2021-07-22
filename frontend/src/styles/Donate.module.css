@@ -1,0 +1,14 @@
+.deliveryPlaces{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    
+}
+.deliveryPlacesItem{
+    border: 1px solid rgb(233, 233, 233);
+    margin: 20px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: rgb(236, 208, 115);
+}

@@ -1,0 +1,27 @@
+.Utilizador{
+    margin-top: 20vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}
+.Utilizador a{
+    text-decoration: none;
+    background-color: rgb(19, 212, 202);
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 10px;
+    padding: 6px;
+    margin-top: 20px;
+    width: 40%;
+    margin-left: 30vw; 
+
+    cursor: pointer;
+    box-shadow: 0 0 1px 0 #000;
+
+    transition: box-shadow 200ms linear;
+}
+.Utilizador a:hover{
+    box-shadow: 0 0 4px black;
+}
