@@ -75,7 +75,9 @@ class Collect extends React.Component{
                      <li className='deliveryPlaces'
                         // onClick={this.fetchDonations(values)}
                      >
-                     <Link to={`/PontodeRecolha/${this.state.freguesia}/locations/${item}`}>{item}</Link></li>
+                     <Link to={`/PontodeRecolha/${this.state.freguesia}/locations/${item}`}
+                     
+                     >{item}</Link></li>
                 </div>
     ))}
                 </div> : null}
