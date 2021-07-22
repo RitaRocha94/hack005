@@ -4,16 +4,34 @@
     margin: 20px;
     font-size: 50px;
 }
+
+.Search{
+    border: none;
+    background: transparent;
+}
+.Search:hover{
+    transform: scale(1.10);
+}
+
+.Search img{
+    width: 20px;
+}
 .deliveryPlaces{
     list-style: none;
     justify-content: center; 
-
+    
+}
+.deliveryPlaces a{
+    color: rgb(27, 27, 27);
+    text-align: center;
     cursor: pointer;
     border-radius: 5px;
     transition: box-shadow 200ms linear;
-    
 }
-
+.deliveryPlaces a:hover{
+    color: black;
+    box-shadow: 0 0 6px black;
+}
 .deliveryPlacesItem{
     display: flex;
     flex-direction: row;
@@ -25,20 +43,4 @@
     text-decoration: none;
     width: 60%;
     margin-left: 20vw;
-}
-.ComponentFreguesias{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.Search{
-    border: none;
-    background: transparent;
-}
-.Search:hover{
-    transform: scale(1.10);
-}
-
-.Search img{
-    width: 20px;
 }

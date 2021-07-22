@@ -4,30 +4,28 @@
     margin: 20px;
     font-size: 50px;
 }
-.Utilizador{
-    margin-top: 20vh;
-    justify-content: center;
+.list{
     display: flex;
     flex-direction: column;
-
+    list-style: none;
 }
-.Utilizador a{
-    text-decoration: none;
-    background-color: rgb(19, 212, 202);
-    color: white;
-    font-size: 20px;
-    font-weight: 800;
+.buttonCollect{
+    width: 20%;
+    height: 100%;
+    margin-left: 40vw;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    background-color: #c08738;
+    border:none;
     border-radius: 10px;
-    padding: 6px;
-    margin-top: 20px;
-    width: 40%;
-    margin-left: 30vw; 
 
     cursor: pointer;
     box-shadow: 0 0 1px 0 #000;
 
     transition: box-shadow 200ms linear;
 }
-.Utilizador a:hover{
-    box-shadow: 0 0 4px black;
+.buttonCollect:hover{
+    box-shadow: 0 0 6px black;
+    transform: scale(1.05);
+    color: rgb(0, 0, 0);
 }

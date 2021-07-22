@@ -7,7 +7,9 @@ function Landing() {
     return (
         <div className={styles.Landing}>
             <div className={styles.container}>
+                <div className={styles.containerBackground}>
                 <img src={'./img/logo.png'} alt={'Logo - The FoodFund by Sintra'} />
+                </div>
             </div>
             <div className={styles.buttons}>
                 <Link className={styles.ButtonDonate} to="/donate">Eu quero doar</Link>

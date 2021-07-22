@@ -11,7 +11,7 @@ function NavBar(){
             <Link to="/Voluntario">Quero Ser Voluntário</Link>
             <Link to="/Donate">Doar</Link>
             <Link to="/Collect">Pontos de Levantamento</Link>
-            <div  className={styles.Area}><Link to="/Utilizador">Area de Voluntário</Link></div>
+            <div  className={styles.Area}><Link to="/Utilizador">Entrar</Link></div>
         </div>
     )
 }

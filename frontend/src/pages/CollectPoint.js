@@ -1,6 +1,6 @@
 import React from "react"
 import { withRouter } from "react-router";
-import { Formik, Field } from 'formik'
+import styles from '../styles/CollectPoint.module.css'
 
 class PontodeRecolha extends React.Component{
     constructor(props){
@@ -12,26 +12,13 @@ class PontodeRecolha extends React.Component{
 
     componentDidMount(){
         const id = this.props.match.params;
-        console.log("id")
-        console.log(id)
         this.fetchDonations(id)
     }
 
     fetchDonations = async (values) => {
-        console.log(values.freguesias)
-        console.log(values.rua)
-        // const res = await fetch(`/api/donations/${values.freguesias}/locations/${values.rua}`) //passar freguesia e ponto de recolha
-        //antes estava isto /api/donations/freguesias/${values.freguesias}/locations/${values.rua}
         const res = await fetch(`/api/donations/freguesias/${values.freguesias}/locations/${values.rua}`)
         const json = await res.json();
-
-        // this.setState(item => ({
-        //     donations: item.donations.map(i => {
-              
-        //   })
-
          this.setState({donations: json.donations})
-        console.log(this.state.donations)
     }
 
     handleDonations = async (id) => {
@@ -47,23 +34,19 @@ class PontodeRecolha extends React.Component{
     render(){
         return(
             <div>
-                {/* {JSON.stringify(this.state.donations)} */}
+                <h2 className={styles.Title}>Veja aqui se existem donações existentes neste ponto de recolha</h2>
                 <div>
                   {this.state.donations.map((item, index) => (
-                      <div key={index}>
+                      <div key={index} className={styles.list}>
+
                         <p>
                             {
-                                item.alimentos.map(a => 
-                                // <p>Doação {index}</p>
+                                item.alimentos.map(a =>
                                 <p>Quantidade: {a.number} Alimento: {a.name} </p>)
                                 
                             }
                         </p>  
-                        <button onClick={() =>this.handleDonations(item._id)}>Recolher</button>
-                        {/* <Field type="number"
-                          min={0}
-                          name={`alimentos.${index}.number`}
-                          placeholder="Quantidade (unidade)" /> */}
+                        <button className={styles.buttonCollect} onClick={() =>this.handleDonations(item._id)}>Recolher</button>
                         </div>
                         
                   ))}

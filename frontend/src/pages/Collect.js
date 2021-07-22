@@ -1,6 +1,7 @@
 import { Formik, Field } from "formik";
 import React from "react"
 import { Link } from "react-router-dom"
+import styles from '../styles/Collect.module.css'
 
 class Collect extends React.Component{
         constructor(props){
@@ -9,7 +10,7 @@ class Collect extends React.Component{
                 donations: {},
                 togglePlaces: false,
                 freguesia: '',
-                deliveryPlaces: ["Escola", "PSP", "Junta de Frequesia", "Clube Desportivo"] 
+                deliveryPlaces: ["Escola", "PSP", "Junta de Freguesia", "Clube Desportivo"] 
             }
         }
 
@@ -26,26 +27,15 @@ class Collect extends React.Component{
                         freguesia: values.freguesias
         })
     }
-        
-        // useEffect(() => {
-        //     handleToggle
-        // }
+
         render(){
             let {togglePlaces} = this.state
         return (
             <div>
-                <h2>Bem-Vindo</h2>
+                <h2 className={styles.Title}>Procure os sitios onde pode recolher</h2>
                 <Formik
                 initialValues={{ freguesias: ''}}
-                    onSubmit={ this.handleToggle}
-                    // onClick={async (values) => {
-                    //     console.log(values.freguesias)
-                    //     const res = await fetch(`/api/donations/${values.freguesias}`)
-                    //     const json = await res.json();
-                    //     this.setState({donations: json.donations})
-                    //     console.log(this.state.donations)
-                    //   }}
-                    >
+                    onSubmit={ this.handleToggle}>
                    {
                         ({ values, handleSubmit }) => (
                 <form onSubmit={handleSubmit}
@@ -64,7 +54,7 @@ class Collect extends React.Component{
                   <option value="Almargem do Bispo, Pero Pinheiro e Montelavar">Almargem do Bispo, Pero Pinheiro e Montelavar</option>
                   <option value="Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim">Santa Maria e São Miguel, São Martinho e São Pedro de Penaferrim</option>
                     </Field>
-                    <button type="submit">Pesquisar</button>
+                    <button className={styles.Search} type="submit"><img src={'./img/search.png'} alt={'Search'} /></button>
                 </form>
                         )}
     
@@ -73,22 +63,14 @@ class Collect extends React.Component{
                 <div>
                      {this.state.deliveryPlaces.map((item, index) => (
                      <div key={index}>
-                     <li className='deliveryPlaces'
-                        // onClick={this.fetchDonations(values)}
-                     >
-                     <Link to={`/PontodeRecolha/${this.state.freguesia}/locations/${item}`}
-                     
-                     >{item}</Link></li>
+                     <div className={styles.deliveryPlaces}>
+                     <Link className={styles.deliveryPlacesItem} 
+                     to={`/PontodeRecolha/${this.state.freguesia}/locations/${item}`}>
+                         {item}
+                        </Link></div>
                 </div>
     ))}
                 </div> : null}
-                {/* <div>
-        {this.state.donations.map((item, index) => (
-            <div key={index}>
-                <div>{item.rua}</div>
-            </div>
-        ))}
-        </div> */}
             </div>
         )
     }

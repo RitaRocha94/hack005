@@ -22,27 +22,30 @@ function Voluntary(){
             <p>Para ser voluntário na The FoodFund By Sintra, não importa quais são as tuas habilidades, ou competências.
                 <br/>
                 Se tens uma genuína  vontade em integrar a nossa organização e 
-                estar ao serviço basta  enviares email  para thefoodfund@gmail.com através dos campos abaixo e apresentares a tua candidatura.</p>
+                estar ao serviço basta  enviares email  para thefoodfund@gmail.com <br/>
+                através dos campos abaixo e apresentares a tua candidatura.</p>
+                
                 <form onSubmit={sendEmail} className={styles.Voluntario}>
+                <h3>Enviar email</h3>
                     <div className={styles.Input}>
-                    <label>Nome</label>
+                    <label>Nome:</label>
+                    <br/>
                     <input type="text" placeholder="Name" name="name" />
                     </div>
                     <div className={styles.Input}>
-                    <label>Email</label>
+                    <label>Email:</label>
+                    <br/>
                     <input type="email" placeholder="Email" name="email" />
                     </div>
                     <div className={styles.Input}>
-                    <label>Assunto</label>
+                    <label>Assunto:</label>
+                    <br/>
                     <input type="text" placeholder="Assunto" name="subject" />
                     </div>
                     <div className={styles.Input}>
-                    <textarea name="message" />
+                    <textarea className={styles.Message} name="message" />
                     </div>
-                    <div className={styles.ButtonSubmit}>
-                    <input type="submit" placeholder="Enviar" value="Send" />
-                    </div>
-                    
+                    <input className={styles.ButtonSubmit} type="submit" placeholder="Enviar" value="Send" />
                 </form>
         </div>
     )

@@ -7,7 +7,7 @@ class Donate extends React.Component{
     super(props)
     this.state= {
     togglePlaces: false,
-    deliveryPlaces: ["Escola", "PSP", "Junta de Frequesia", "Clube Desportivo"]  
+    deliveryPlaces: ["Escola", "PSP", "Junta de Freguesia", "Clube Desportivo"]  
     }
   }
 
@@ -18,8 +18,7 @@ class Donate extends React.Component{
     render() {
       let {togglePlaces} = this.state;
     return(
-
-    <div>
+        <div>
             <h2 className={styles.Title}>Procure os sitios onde pode doar</h2>
             <Formik
             initialValues={{ freguesias: ''}}

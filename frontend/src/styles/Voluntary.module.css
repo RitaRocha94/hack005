@@ -4,17 +4,33 @@
     margin: 20px;
     font-size: 50px;
 }
+.VolunteeringPage p{
+    text-align: center;
+}
+.Voluntario h3{
+    margin-top: 5vh;
+    margin-bottom: 4vh;
+}
 .Voluntario{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
+    background-color: rgb(243, 240, 235);
 
     justify-content: center;
-    margin-left: 50px;
+
 }
 .Input{
     margin-left: 20px;
 }
+.Message{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .ButtonSubmit{
-    margin-left: 10px;
+    margin-left: 46vw;
+    width: 90px;
+    background-color: #cfa164;
+    border: none;
+    border-radius: 10px;
 }

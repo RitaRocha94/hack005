@@ -2,7 +2,7 @@ import './App.css';
 import Donate from './pages/Donate';
 import Collect from './pages/Collect';
 import Landing from './pages/Landing';
-import PontodeRecolha from './pages/PontodeRecolha';
+import PontodeRecolha from './pages/CollectPoint';
 import WhoWeAre from './pages/WhoWeAre';
 import FAQ from './pages/FAQ';
 import Voluntary from './pages/Voluntary.js';

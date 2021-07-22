@@ -4,8 +4,10 @@ import { Link } from "react-router-dom"
 function User() {
     return (
         <div className={styles.Utilizador}>
+            <h2 className={styles.Title}>Área do Utilizador</h2>
            <Link to="/Gestão">Inserir Doações</Link>
-           <Link to="/Gestão">Gerir Doações</Link>
+           <Link to="/">Gerir Doações</Link>
+           <Link to="/">Perfil</Link>
         </div>
     )
 }
