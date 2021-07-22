@@ -6,7 +6,7 @@ class Collect extends React.Component{
         constructor(props){
             super(props);
             this.state = {
-                donations: [],
+                donations: {},
                 togglePlaces: false,
                 freguesia: '',
                 deliveryPlaces: ["Escola", "PSP", "Junta de Frequesia", "Clube Desportivo"] 
@@ -53,6 +53,7 @@ class Collect extends React.Component{
                      <Field
                   as="select"
                   name="freguesias" >
+                 <option value="empty"></option>
                   <option value="Agualva e Mira-Sintra">Agualva e Mira-Sintra</option>
                   <option value="Algueirão - Mem Martins">Algueirão - Mem Martins</option>
                   <option value="Cabrela">Cabrela</option>

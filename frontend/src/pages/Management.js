@@ -67,6 +67,7 @@ return (
             <Field
               as="select"
               name="freguesias" >
+              <option value="empty"></option>
               <option value="Agualva e Mira-Sintra">Agualva e Mira-Sintra</option>
               <option value="Algueirão - Mem Martins">Algueirão - Mem Martins</option>
               <option value="Cabrela">Cabrela</option>

@@ -42,7 +42,7 @@ function App() {
             <Route exact path="/Gestão">
                 <Management />
             </Route>
-            <Route exact path="/PontodeRecolha/:freguesia/locations/:ponto">
+            <Route exact path="/PontodeRecolha/:freguesias/locations/:rua">
                 <PontodeRecolha />
             </Route>
       </Switch>

@@ -12,12 +12,13 @@ class PontodeRecolha extends React.Component{
         const id = this.props.match.params;
         console.log("id")
         console.log(id)
-        // this.fetchDonations(id)
+        this.fetchDonations(id)
     }
 
     fetchDonations = async (values) => {
         // const res = await fetch(`/api/donations/${values.freguesias}/locations/${values.rua}`) //passar freguesia e ponto de recolha
-        const res = await fetch(`/api/donations/${values.freguesias}/locations/${values.rua}`)
+        //antes estava isto /api/donations/freguesias/${values.freguesias}/locations/${values.rua}
+        const res = await fetch(`/api/donations/freguesias/:freguesia/locations/:rua`)
         const json = await res.json();
         this.setState({donations: json.donations})
         console.log(this.state.donations)
@@ -26,7 +27,7 @@ class PontodeRecolha extends React.Component{
     render(){
         return(
             <div>
-                
+                {this.state.donations}
             </div>
         )
     }

@@ -11,12 +11,13 @@ const PORT = 3501
 app.use(express.json())
 
 
-app.get("/api/donations/:location", async (req, res) => {
-    console.log("req.params.location:")
-    console.log(req.params.location)
+app.get("/api/donations/freguesias/:freguesia/locations/:rua", async (req, res) => {
+    console.log("req.params.location")
+    console.log(req.params.freguesia)
+    console.log(req.params.rua)
     try {
         res.status(200).json({
-        donations: await findDonation(req.params.location)
+        donations: await findDonation(req.params.freguesia, req.params.rua)
     })
     } catch (err) {
     res.status(500).send("Erro a ler as mensagens")

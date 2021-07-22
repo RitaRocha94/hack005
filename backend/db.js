@@ -57,10 +57,13 @@ async function deleteDonation(id){
     return res.result.ok === 1;
 }
 
-async function findDonation(location){
+async function findDonation(freguesia, rua){
    const collection = await getCollection(DB_NAME, "Donations")
-   const result = await collection.find({freguesias: location}).toArray()
-   console.log("result from db")
+   console.log("Freguesia a aparecer na find Donation:")
+   console.log(freguesia)
+   console.log("rua a aparecer na find Donation:")
+   console.log(rua)
+   const result = await collection.find({freguesias: freguesia, rua: rua}).toArray()
    console.log(result)
    return result 
 }
