@@ -59,7 +59,7 @@ class PontodeRecolha extends React.Component{
                                 
                             }
                         </p>  
-                        <button onClick={this.handleDonations(item._id)}>Recolher</button>
+                        <button onClick={() => this.handleDonations(item._id)}>Recolher</button>
                         {/* <Field type="number"
                           min={0}
                           name={`alimentos.${index}.number`}
