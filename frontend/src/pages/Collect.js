@@ -8,24 +8,28 @@ class Collect extends React.Component{
             this.state = {
                 donations: [],
                 togglePlaces: false,
-                deliveryPlaces: ["Escola", "PSP", "Junta de Frequesia", "Clube Desportivo"]  
+                freguesia: '',
+                deliveryPlaces: ["Escola", "PSP", "Junta de Frequesia", "Clube Desportivo"] 
             }
         }
 
         fetchDonations = async (values) => {
-            const res = await fetch(`/api/donations/${values.freguesias}`)
+            const res = await fetch(`/api/donations/${values.freguesias}/locations/${values.rua}`) //passar freguesia e ponto de recolha
             const json = await res.json();
             this.setState({donations: json.donations})
             console.log(this.state.donations)
         }
 
-    handleToggle = () => {
-        this.setState({togglePlaces: true})
+    handleToggle = (values) => {
+        console.log(values)
+        this.setState({togglePlaces: true,
+                        freguesia: values.freguesias
+        })
     }
         
         // useEffect(() => {
-            //     fetchDonations("Cabrelas")
-            // }, [])
+        //     handleToggle
+        // }
         render(){
             let {togglePlaces} = this.state
         return (
@@ -71,7 +75,7 @@ class Collect extends React.Component{
                      <li className='deliveryPlaces'
                         // onClick={this.fetchDonations(values)}
                      >
-                     <Link to={`/PontodeRecolha/${item}`}>{item}</Link></li>
+                     <Link to={`/PontodeRecolha/${this.state.freguesia}/locations/${item}`}>{item}</Link></li>
                 </div>
     ))}
                 </div> : null}
