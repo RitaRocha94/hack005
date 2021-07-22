@@ -1,5 +1,7 @@
 import React from "react"
 import { withRouter } from "react-router";
+import { Formik, Field } from 'formik'
+
 class PontodeRecolha extends React.Component{
     constructor(props){
         super(props)
@@ -32,6 +34,10 @@ class PontodeRecolha extends React.Component{
         console.log(this.state.donations)
     }
 
+    handleDonations = () => {
+    //apaga linha
+    }
+
     render(){
         return(
             <div>
@@ -39,11 +45,21 @@ class PontodeRecolha extends React.Component{
                 <div>
                   {this.state.donations.map((item, index) => (
                       <div key={index}>
-                        <p>
-                              {({alimento: item.alimentos}, {quantidade: item.number})}
+                        <p onClick={this.handleDonations}>
+                            {
+                                item.alimentos.map(a => 
+                                // <p>Doação {index}</p>
+                                <p>Quantidade: {a.number} Alimento: {a.name} </p>)
+                                
+                            }
                         </p>  
+                        <button>Recolher</button>
+                        {/* <Field type="number"
+                          min={0}
+                          name={`alimentos.${index}.number`}
+                          placeholder="Quantidade (unidade)" /> */}
                         </div>
-                       
+                        
                   ))}
             </div>
             </div>
