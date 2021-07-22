@@ -54,7 +54,7 @@ async function deleteDonation(id){
     const collection = await getCollection(DB_NAME, "Donations")
     const result = collection.deleteOne({_id: ObjectId(id) })
     console.log('A apagar a doação....')
-    return res.result.ok === 1;
+    return result.ok === 1;
 }
 
 async function findDonation(freguesia, rua){
