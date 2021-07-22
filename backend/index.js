@@ -26,6 +26,21 @@ app.get("/api/donations/freguesias/:freguesia/locations/:rua", async (req, res) 
     }
 })
 
+app.delete("/api/donations/:id", async (req, res) => {
+    try {
+        const deleted = await deleteDonation(req.params.id)
+        console.log('deleted', deleted)
+        if (deleted) {
+            res.status(200).json()
+        } else {
+            res.sendStatus(404)
+        }
+    } catch (err) {
+        console.log(err)
+        res.sendStatus(404)
+    }
+})
+
 // app.get("/api/donations/", async (req, res) => {
 //     try {
 //         res.status(200).json({

@@ -34,8 +34,14 @@ class PontodeRecolha extends React.Component{
         console.log(this.state.donations)
     }
 
-    handleDonations = () => {
-    //apaga linha
+    handleDonations = async (id) => {
+        const res = await fetch(`/api/donations/${id}`, {
+            method: "DELETE"
+        })
+        if (res.status === 200) {
+            console.log("foi apagado")
+        }
+        await this.fetchDonations(this.props.match.params)
     }
 
     render(){
@@ -45,7 +51,7 @@ class PontodeRecolha extends React.Component{
                 <div>
                   {this.state.donations.map((item, index) => (
                       <div key={index}>
-                        <p onClick={this.handleDonations}>
+                        <p>
                             {
                                 item.alimentos.map(a => 
                                 // <p>Doação {index}</p>
@@ -53,7 +59,7 @@ class PontodeRecolha extends React.Component{
                                 
                             }
                         </p>  
-                        <button>Recolher</button>
+                        <button onClick={this.handleDonations(item._id)}>Recolher</button>
                         {/* <Field type="number"
                           min={0}
                           name={`alimentos.${index}.number`}
