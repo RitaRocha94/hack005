@@ -14,6 +14,7 @@ app.use(express.json())
 app.get("/api/donations/freguesias/:freguesia/locations/:rua", async (req, res) => {
     console.log("req.params.location")
     console.log(req.params.freguesia)
+    console.log("req.params.rua")
     console.log(req.params.rua)
     try {
         res.status(200).json({

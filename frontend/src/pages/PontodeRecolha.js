@@ -16,18 +16,36 @@ class PontodeRecolha extends React.Component{
     }
 
     fetchDonations = async (values) => {
+        console.log(values.freguesias)
+        console.log(values.rua)
         // const res = await fetch(`/api/donations/${values.freguesias}/locations/${values.rua}`) //passar freguesia e ponto de recolha
         //antes estava isto /api/donations/freguesias/${values.freguesias}/locations/${values.rua}
-        const res = await fetch(`/api/donations/freguesias/:freguesia/locations/:rua`)
+        const res = await fetch(`/api/donations/freguesias/${values.freguesias}/locations/${values.rua}`)
         const json = await res.json();
-        this.setState({donations: json.donations})
+
+        // this.setState(item => ({
+        //     donations: item.donations.map(i => {
+              
+        //   })
+
+         this.setState({donations: json.donations})
         console.log(this.state.donations)
     }
 
     render(){
         return(
             <div>
-                {this.state.donations}
+                {/* {JSON.stringify(this.state.donations)} */}
+                <div>
+                  {this.state.donations.map((item, index) => (
+                      <div key={index}>
+                        <p>
+                              {({alimento: item.alimentos}, {quantidade: item.number})}
+                        </p>  
+                        </div>
+                       
+                  ))}
+            </div>
             </div>
         )
     }
