@@ -11,12 +11,13 @@ class Collect extends React.Component{
                 deliveryPlaces: ["Escola", "PSP", "Junta de Frequesia", "Clube Desportivo"]  
             }
         }
-    // async function fetchDonations(values){
-    //         const res = await fetch(`/api/donations/${values.freguesias}`)
-    //         const json = await res.json();
-    //         setDonations(json.donations)
-    //         console.log(donations)
-    //     }
+
+        fetchDonations = async (values) => {
+            const res = await fetch(`/api/donations/${values.freguesias}`)
+            const json = await res.json();
+            this.setState({donations: json.donations})
+            console.log(this.state.donations)
+        }
 
     handleToggle = () => {
         this.setState({togglePlaces: true})
@@ -33,13 +34,13 @@ class Collect extends React.Component{
                 <Formik
                 initialValues={{ freguesias: ''}}
                     onSubmit={ this.handleToggle}
-                    onClick={async (values) => {
-                        console.log(values.freguesias)
-                        const res = await fetch(`/api/donations/${values.freguesias}`)
-                        const json = await res.json();
-                        this.setState({donations: json.donations})
-                        console.log(this.state.donations)
-                      }}
+                    // onClick={async (values) => {
+                    //     console.log(values.freguesias)
+                    //     const res = await fetch(`/api/donations/${values.freguesias}`)
+                    //     const json = await res.json();
+                    //     this.setState({donations: json.donations})
+                    //     console.log(this.state.donations)
+                    //   }}
                     >
                    {
                         ({ values, handleSubmit }) => (
@@ -67,7 +68,9 @@ class Collect extends React.Component{
                 <div>
                      {this.state.deliveryPlaces.map((item, index) => (
                      <div key={index}>
-                     <li className='deliveryPlaces'>
+                     <li className='deliveryPlaces'
+                        // onClick={this.fetchDonations(values)}
+                     >
                      <Link to={`/PontodeRecolha/${item}`}>{item}</Link></li>
                 </div>
     ))}
